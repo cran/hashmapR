@@ -218,7 +218,7 @@ class Hashmap {
         keys_.push_back(key);
         values_.push_back(value);
         
-        if (R_isTRUE(replace)) {
+        if (Rf_asLogical(replace)) {
             this->map_.insert_or_assign(key, value);
         } else {
             this->map_.try_emplace(key, value);
@@ -228,7 +228,7 @@ class Hashmap {
     }   
 
     SEXP contains(SEXP key) const {
-        return Rf_ScalarLogical(this->map_.contains(key));
+        return Rf_ScalarLogical(this->map_.count(key) > 0);
     }
 
     SEXP contains_range(SEXP keys) const {
@@ -237,7 +237,7 @@ class Hashmap {
 
         for (std::size_t i = 0; i < len; i++) {
             SEXP k = VECTOR_ELT(keys, i);
-            LOGICAL(list)[i] = this->map_.contains(k);
+            LOGICAL(list)[i] = this->map_.count(k) > 0;
         }
         UNPROTECT(1);
         return list;
@@ -487,9 +487,9 @@ SEXP C_hashmap_tolist(SEXP map) {
     return map_->to_list();
 }
 
-SEXP C_hashmap_invert(SEXP map, SEXP _duplicates) {
+SEXP C_hashmap_invert(SEXP map, SEXP duplicates) {
     Hashmap *map_ = static_cast<Hashmap*>(GET_PTR(map));
-    return map_->invert(_duplicates); 
+    return map_->invert(duplicates); 
 }
 
 SEXP C_hashmap_clone(SEXP map) {

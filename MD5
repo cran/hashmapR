@@ -1,11 +1,11 @@
-381c836e2cdabf59be8c504c948dbf77 *DESCRIPTION
+abe49206df77821c16f2f6fc26205468 *DESCRIPTION
 1e2a541132f9dc0bbfdc79ad391d62ec *LICENSE
 0b21bc9e35fd8e9937a6f45a07c8a57a *NAMESPACE
 8491a31060a31b09b83b83bcae8b0757 *NEWS.md
 cb6a56d2e0afce528759c66fa715552e *R/hashmapR.R
-3f89c57a706be434139b1649d5ce3abe *README.md
+0818abcccc9f84e816a7af486000531c *README.md
 9dafefa66561ea50c5a272d293cbcd8b *man/hashmap.Rd
-28603851767744921209798288d3d2f5 *src/hashmap.cpp
-28c5c61cabcfb21369546ca9271b25b2 *src/init.c
+7694c2bb5036d4e65b61885277352bef *src/hashmap.cpp
+bd374dd9257e6ff4d24b0afd9464ddd7 *src/init.c
 687e34bce3de6fe5a1fc493f0c3a94a3 *tests/testthat.R
-6dfc87ab8f7c822c25efd5949d32798f *tests/testthat/test_map.R
+6b12cb3ed55249428cbb9f448954fdd7 *tests/testthat/test_map.R
